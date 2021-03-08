@@ -1,0 +1,20 @@
+#version that we are using for this project...
+version: "3"
+
+#right now we only need one service of r our django python app
+services:
+  #name of out service is app
+  app:
+    build:
+      #remember . is the directotry we are in, so set context to our current directory in build
+      context: .
+    #port set up
+    ports:
+      - "8000:8000"
+    #volumes allows us to get the updates to our project in real time
+    volumes:
+      - ./app:/app #take the app directory in out project and update to the app directory in out docker image
+    #this is the command we would use to run our application in our docker container
+    command:
+      > #> makes it so we can type into the next line, make sure to indent though
+      sh -c "python manage.py runserver 0.0.0.0:8000"
