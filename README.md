@@ -21,3 +21,7 @@ docker-compose run app sh -c "python manage.py test"
 # docker build
 
 docker-compose build
+
+# adding core folder in app
+
+docker-compose run app sh -c "python manage.py startapp core"
