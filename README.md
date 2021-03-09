@@ -13,3 +13,11 @@ docker-compose run app sh -c "django-admin.py startproject app ."
 using flake8
 and https://travis-ci.org/github/JonathanLGeorge/Recipe_App_API
 we git push origin to reload i think...
+
+# tests
+
+docker-compose run app sh -c "python manage.py test"
+
+# docker build
+
+docker-compose build
